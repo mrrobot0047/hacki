@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper,
+.content {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.content {
+  overflow-x: hidden;
+}
+
+.content .section {
+  width: 100%;
+  height: 100vh;
+}
+
+.content .section.hero {
+  background-image: url(hack.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  perspective: 500px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  font-family: "Urbanist";
+	--bg: #0b0a0d;
+	--bg-2: #1b1c1f;
+	--bg-2: #1f1c21;
+	--accent: #864DEB;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.bbody {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  background: var(--bg);
+  overflow: hidden;
+  display: grid;
+	place-content: center;
+  color: var(--primary-text);
+	user-select: none
+}
+.cont {
+	--scroll: 1;
+	height: 20rem;
+	width: 20rem;
+	position: relative;
+}
+.cont:hover {
+	--dscroll: 1.6;
+}
+.cont > section {
+	--relPosition: 1;
+	position: absolute;
+	top: 0;
+	left: calc(var(--relPosition) * 80%);
+	height: 100%;
+	width: 100%;
+	padding: 0.75rem;
+	border-radius: 2rem;
+	display: flex;
+	flex-direction: column;
+	box-shadow: inset 0 0 0 0.125rem #ffffff11;
+	overflow: hidden;
+	isolation: isolate;
+	z-index: calc(1000 + 100 * min(var(--relPosition), -1*var(--relPosition)));
+}
+.cont > section:after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: var(--image) center center / cover;
+	z-index: -1;
+	border-radius: inherit;
+	filter: brightness(50%) blur(0.25rem);
+	transform: scale(1);
+}
+
+.cont > section > .image {
+	flex-grow: 1;
+	border-radius: 1.25rem;
+	box-shadow: 0 0 0.75rem #00000077;
+	background: var(--image) center center / cover;
+}
+
+.cont > section > .title {
+	color: white;
+	font-weight: 500;
+	padding: 0.25rem 0.125rem;
+	font-size: 1.25rem;
+}
+
+.cont > section > .button {
+	height: 2.5rem;
+	border-radius: 1.25rem;
+	background: #ffffff22;
+	backdrop-filter: brightness(200%) blur(2rem);
+	display: grid;
+	place-content: center;
+	font-weight: 500;
+	color: white;
+}
+
+
+
+
+#hiking {
+  --image: url('https://media.licdn.com/dms/image/v2/D4D12AQG80z01o46utQ/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1708983374625?e=1738195200&v=beta&t=AdfQ31Hy9wO1YBxgLq5MiqbdL-DOuJQVsTbcDWbhZpM'); /* photo by David Gavi for Unsplash */
+}
+
+#camping {
+  --image: url('https://repository-images.githubusercontent.com/824934673/83ca3605-81fb-428c-aae8-3bec0b4e8064'); /* Photo by Valery Sysoev for Unsplash */
+}
+
+#stargazing {
+  --image: url('https://cdn.dfg.com.br/itemthumbnails/918909937-medusa-rat-kl-remota-ZR22-thumbnail.webp'); /* Photo by Chris Leggat for Unsplash */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.s3 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: none;
+}
+
+.s3 .card {
+  cursor: pointer;
+}
+
+.s3 .card__image {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+}
+
+.s3 .card__content {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  background: whitesmoke;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  will-change: transform;
+  transition: transform 0.25s ease-out;
+}
+
+.s3 .card__title {
+  color: hsl(201, 14%, 20%);
+  font-size: 20px;
+  padding: 10px 14px 5px;
+  margin: 0;
+}
+
+.s3 .card__description {
+  margin: 0;
+  padding: 0 14px 10px;
+  font-size: 14px;
+  color: hsl(201, 14%, 40%);
+  text-align: left;
+}
+
+.s3 .card__gloss {
+  opacity: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: absolute;
+  will-change: opacity;
+}
+
+.s3 .card__gloss.card__gloss--animatable {
+  transition: 0.25s opacity ease-out;
+}
